@@ -1,0 +1,15 @@
+#wall .tag-1 {
+    display: none;
+  }
+div#wall #tag-2 {
+    display: none;
+}
+div#wall div#tag-3.wicked, 
+div#wall #tag-4,
+div#wall div.parent div#tag-5.slick,
+body div#wall div.parent div:last-child div#tag-6 {
+   display: none;
+  }
+body div#wall div.parent div:first-child div#tag-7 {
+    display: none;
+}
