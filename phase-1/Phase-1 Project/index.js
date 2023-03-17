@@ -12,8 +12,8 @@ function handleDogs(dogs) {
   
   dogs.forEach((dog) => {
     
-    let dogList = document.createElement("ul");
-    let newDog = document.createElement("li");
+    let dogList = document.createElement("div");
+    let newDog = document.createElement("div");
     newDog.innerText = dog.name;
     dogList.appendChild(newDog);
     dogContainer.appendChild(dogList);
