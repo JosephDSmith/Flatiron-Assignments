@@ -14,6 +14,7 @@ function handleDogs(dogs) {
     
     let dogList = document.createElement("div");
     let newDog = document.createElement("div");
+    newDog.className = "dogDiv"
     newDog.innerText = dog.name;
     dogList.appendChild(newDog);
     dogContainer.appendChild(dogList);
@@ -23,23 +24,27 @@ function handleDogs(dogs) {
     });
 
     newDog.addEventListener("dblclick", () => {
+      
       document.querySelector("h3").innerHTML = " ";
       document.querySelector("h1").innerHTML = " ";
       dogContainer.innerHTML = " ";
       let backButton = document.createElement("button");
       backButton.className = "btn";
+      let dogWrapper = document.createElement("div")
+      dogWrapper.className = "dogWrapper"
       let dogPic = document.createElement("img");
-      let dogName = document.createElement("p");
+      let dogName = document.createElement("h3");
       let dogTemperment = document.createElement("p");
       backButton.innerText = "Go Back";
       dogPic.src = dog.image.url;
       dogPic.className = "pictures";
       dogTemperment.innerText = `Dog bred for : ${dog.bred_for}`;
       dogName.innerText = `Dog Breed Name : ${dog.name}`;
-      dogContainer.appendChild(dogPic);
-      dogContainer.appendChild(dogName);
-      dogContainer.appendChild(dogTemperment);
-      dogContainer.appendChild(backButton);
+      dogContainer.appendChild(dogWrapper)
+      dogWrapper.appendChild(dogPic);
+      dogWrapper.appendChild(dogName);
+      dogWrapper.appendChild(dogTemperment);
+      dogWrapper.appendChild(backButton);
 
       backButton.addEventListener("click", () => {
         dogContainer.innerHTML = " ";
