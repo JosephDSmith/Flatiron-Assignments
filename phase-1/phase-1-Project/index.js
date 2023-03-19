@@ -5,6 +5,7 @@ fetch("https://api.thedogapi.com/v1/breeds")
 let dogContainer = document.querySelector("#dogContainer");
 
 function handleDogs(dogs) {
+  console.log(dogs)
 
   
   document.querySelector("h1").innerHTML = "Dog Breeds";
@@ -15,10 +16,16 @@ function handleDogs(dogs) {
     let dogList = document.createElement("div");
     let newDog = document.createElement("div");
     newDog.className = "dogDiv"
-    newDog.innerText = dog.name;
+    let dogName = document.createElement("p")
+    dogName.className = "dogName"
+    dogName.innerText = dog.name.toUpperCase();
+    let icon = document.createElement("img")
+    icon.className = "icon"
+    icon.src = dog.image.url
     dogList.appendChild(newDog);
     dogContainer.appendChild(dogList);
-
+    newDog.appendChild(icon)
+    newDog.appendChild(dogName)
     newDog.addEventListener("mouseover", (e) => {
       e.target.style.cursor = "pointer";
     });
@@ -34,16 +41,18 @@ function handleDogs(dogs) {
       dogWrapper.className = "dogWrapper"
       let dogPic = document.createElement("img");
       let dogName = document.createElement("h3");
-      let dogTemperment = document.createElement("p");
+      let dogBredFor = document.createElement("p");
+      let breedGroup = document.createElement("p")
       backButton.innerText = "Go Back";
       dogPic.src = dog.image.url;
       dogPic.className = "pictures";
-      dogTemperment.innerText = `Dog bred for : ${dog.bred_for}`;
-      dogName.innerText = `Dog Breed Name : ${dog.name}`;
+      dogBredFor.innerText = `I'm bred for : ${dog.bred_for}!`;
+      dogName.innerText = `My breed name : ${dog.name}`;
+      breedGroup.innerText = `My breed group is ${dog.breed_group}`
       dogContainer.appendChild(dogWrapper)
       dogWrapper.appendChild(dogPic);
       dogWrapper.appendChild(dogName);
-      dogWrapper.appendChild(dogTemperment);
+      dogWrapper.appendChild(dogBredFor);
       dogWrapper.appendChild(backButton);
 
       backButton.addEventListener("click", () => {
