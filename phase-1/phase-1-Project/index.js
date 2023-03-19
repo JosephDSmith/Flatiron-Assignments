@@ -8,7 +8,8 @@ let dogContainer = document.querySelector("#dogContainer");
 
 //define main function to take all data from API and render HTML elements for all dog data
 function handleDogs(dogs) {
-
+console.log(dogs)
+ 
 //set a title and subtitle for the page
   document.querySelector("h1").innerHTML = "Dog Breeds";
   document.querySelector("h3").innerHTML = "Double-Click to see breed details!";
@@ -62,10 +63,16 @@ function handleDogs(dogs) {
       dogPic.className = "pictures";
       dogWrapper.className = "dogWrapper";
       backButton.innerText = "Go Back";
-      dogPic.src = dog.image.url;
-      dogBredFor.innerText = `I'm bred for : ${dog.bred_for}!`;
+      dogPic.src = dog.image.url;   
       dogName.innerText = `My breed name : ${dog.name}`;
       breedGroup.innerText = `My breed group is ${dog.breed_group}`;
+      
+//assign "if" statement to deal with certain dogs that had no bred_for key
+      if (dog.bred_for === undefined) {
+      dogBredFor.innerText = "Bred for unknown purposes";
+      } else {
+      dogBredFor.innerText = `I'm bred for: ${dog.bred_for}!`;
+      }   
 
 //append all elements in order
       dogContainer.appendChild(dogWrapper);
