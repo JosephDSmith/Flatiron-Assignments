@@ -1,10 +1,28 @@
+/* Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+h3,
+p,
+button {
+    margin: 1rem 0;
+    margin-left: 1.5rem;
+}
+
+.html {
+    background-color: #e4e6e8;
+}
+
+.title,
+.description {
+    color: #fff;
+    text-align: center;
 }
 
 .container {
@@ -13,27 +31,43 @@
     background-color: #a60303;
 }
 
-nav {
-    
-    position: fixed;
-    top: 0;
-    background-color: white;
-}
-#dogContainer{
+#dogContainer {
     padding-top: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 3rem;
     background-color: #e4e6e8;
-   
 }
 
+.dogDiv {
+    display: flex;
+    margin: 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.dogWrapper {
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #fff;
+}
 
 .pictures {
     width: 100%;
     height: auto;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.icon {
+    transition: all .3s ease;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #a60303;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 button {
@@ -54,9 +88,9 @@ button {
     font-size: 14px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     cursor: pointer;
     background: #a60303;
     background-image: -webkit-linear-gradient(top, #a60303, #800404);
@@ -65,51 +99,12 @@ button {
     background-image: -o-linear-gradient(top, #a60303, #800404);
     background-image: linear-gradient(to bottom, #a60303, #800404);
     text-decoration: none;
-  }
-
-h3, p, button {
-    margin: 1rem 0;
-    margin-left: 1.5rem;
 }
 
-.dogWrapper {
-    
-    border-radius: 10px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    background-color: #fff;
-
-    
-}
-
-.icon{
-    transition: all .3s ease;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 1px solid #a60303;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
-    
-}
-
-.dogDiv {
-    display: flex;
-    margin: 1rem;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: #fff;
-}
-.icon:hover{
+.icon:hover {
     transform: scale(1.1)
 }
-.dogName:hover{
+
+.dogName:hover {
     text-decoration: underline;
-}
-.title, .description {
-    color: #fff;
-    text-align: center;
-}
-.html{
-    background-color: #e4e6e8;;
 }
